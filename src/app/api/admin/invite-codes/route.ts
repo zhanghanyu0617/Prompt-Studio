@@ -46,7 +46,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { action, data } = body
+    const { action, payload } = body
 
     switch (action) {
       case 'create':
@@ -54,11 +54,11 @@ export async function POST(request: Request) {
         const { data: newCode, error: createError } = await supabaseAdmin
           .from('invite_codes')
           .insert({
-            code: data.code,
-            max_uses: data.max_uses || 1,
-            reward_quota: data.reward_quota || 50,
-            is_active: data.is_active !== undefined ? data.is_active : true,
-            expires_at: data.expires_at || null,
+            code: payload.code,
+            max_uses: payload.max_uses || 1,
+            reward_quota: payload.reward_quota || 50,
+            is_active: payload.is_active !== undefined ? payload.is_active : true,
+            expires_at: payload.expires_at || null,
           })
           .select()
           .single()
@@ -72,12 +72,12 @@ export async function POST(request: Request) {
         const { error: updateError } = await supabaseAdmin
           .from('invite_codes')
           .update({
-            max_uses: data.max_uses,
-            reward_quota: data.reward_quota,
-            is_active: data.is_active,
-            expires_at: data.expires_at,
+            max_uses: payload.max_uses,
+            reward_quota: payload.reward_quota,
+            is_active: payload.is_active,
+            expires_at: payload.expires_at,
           })
-          .eq('id', data.id)
+          .eq('id', payload.id)
 
         if (updateError) throw updateError
 
@@ -88,7 +88,7 @@ export async function POST(request: Request) {
         const { error: deleteError } = await supabaseAdmin
           .from('invite_codes')
           .delete()
-          .eq('id', data.id)
+          .eq('id', payload.id)
 
         if (deleteError) throw deleteError
 
