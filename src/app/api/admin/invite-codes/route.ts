@@ -54,12 +54,12 @@ export async function POST(request: Request) {
         const { data: newCode, error: createError } = await supabaseAdmin
           .from('invite_codes')
           .insert({
-            code: payload.code,
-            max_uses: payload.max_uses || 1,
-            reward_quota: payload.reward_quota || 50,
-            is_active: payload.is_active !== undefined ? payload.is_active : true,
-            expires_at: payload.expires_at || null,
-          })
+            code: (payload as any).code,
+            max_uses: (payload as any).max_uses || 1,
+            reward_quota: (payload as any).reward_quota || 50,
+            is_active: (payload as any).is_active !== undefined ? (payload as any).is_active : true,
+            expires_at: (payload as any).expires_at || null,
+          } as any)
           .select()
           .single()
 
@@ -72,12 +72,12 @@ export async function POST(request: Request) {
         const { error: updateError } = await supabaseAdmin
           .from('invite_codes')
           .update({
-            max_uses: payload.max_uses,
-            reward_quota: payload.reward_quota,
-            is_active: payload.is_active,
-            expires_at: payload.expires_at,
-          })
-          .eq('id', payload.id)
+            max_uses: (payload as any).max_uses,
+            reward_quota: (payload as any).reward_quota,
+            is_active: (payload as any).is_active,
+            expires_at: (payload as any).expires_at,
+          } as any)
+          .eq('id', (payload as any).id)
 
         if (updateError) throw updateError
 
@@ -88,7 +88,7 @@ export async function POST(request: Request) {
         const { error: deleteError } = await supabaseAdmin
           .from('invite_codes')
           .delete()
-          .eq('id', payload.id)
+          .eq('id', (payload as any).id)
 
         if (deleteError) throw deleteError
 
