@@ -57,7 +57,7 @@ export async function POST(request: Request) {
             code: data.code,
             max_uses: data.max_uses || 1,
             reward_quota: data.reward_quota || 50,
-            is_active: data.is_active ?? true,
+            is_active: data.is_active !== undefined ? data.is_active : true,
             expires_at: data.expires_at || null,
           })
           .select()

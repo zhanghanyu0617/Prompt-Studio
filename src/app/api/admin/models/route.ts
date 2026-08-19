@@ -49,7 +49,7 @@ export async function POST(request: Request) {
             model_id: data.model_id,
             type: data.type,
             cost_per_use: data.cost_per_use || 1,
-            is_active: data.is_active ?? true,
+            is_active: data.is_active !== undefined ? data.is_active : true,
             is_default: data.is_default || false,
             config: data.config || {},
           })
