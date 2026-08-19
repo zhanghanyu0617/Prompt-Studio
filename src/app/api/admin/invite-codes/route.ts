@@ -69,8 +69,8 @@ export async function POST(request: Request) {
 
       case 'update':
         // 更新邀请码
-        // @ts-ignore
         const { error: updateError } = await supabaseAdmin
+          // @ts-ignore
           .from('invite_codes')
           .update({
             max_uses: (payload as any).max_uses,
