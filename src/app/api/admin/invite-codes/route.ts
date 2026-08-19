@@ -69,6 +69,7 @@ export async function POST(request: Request) {
 
       case 'update':
         // 更新邀请码
+        // @ts-ignore
         const { error: updateError } = await supabaseAdmin
           .from('invite_codes')
           .update({
@@ -76,7 +77,7 @@ export async function POST(request: Request) {
             reward_quota: (payload as any).reward_quota,
             is_active: (payload as any).is_active,
             expires_at: (payload as any).expires_at,
-          } as any)
+          })
           .eq('id', (payload as any).id)
 
         if (updateError) throw updateError
