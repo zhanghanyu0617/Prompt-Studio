@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Prompt Studio - AI创作工作台
 
 功能强大的AI创作工作台，支持AI对话、图片生成、视频生成等功能。
@@ -39,7 +38,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 
 # AGNES API 配置
-AGNES_API_KEY=sk-JQe3pJYGIVgbO2pAgX5o4KdeEVWF8EiIq8fYxllirEsLMFOy
+AGNES_API_KEY=your-agnes-api-key
 AGNES_BASE_URL=https://api.agnes-ai.com
 
 # 应用配置
@@ -47,11 +46,11 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_APP_NAME=Prompt Studio
 
 # 支付配置（易支付）
-PAYMENT_MERCHANT_ID=150
-PAYMENT_MERCHANT_KEY=QqAlgOwucP6uQIxIhpVnFK288UXwhIxB
-PAYMENT_SOFTWARE_KEY=DQExOMh4pPtAiTtxKAWI9NNpwfIwfZZn
-PAYMENT_API_URL=https://pay.mx88.top/mapi.php
-PAYMENT_SUBMIT_URL=https://pay.mx88.top/submit.php
+PAYMENT_MERCHANT_ID=your-merchant-id
+PAYMENT_MERCHANT_KEY=your-merchant-key
+PAYMENT_SOFTWARE_KEY=your-software-key
+PAYMENT_API_URL=https://your-payment-gateway/mapi.php
+PAYMENT_SUBMIT_URL=https://your-payment-gateway/submit.php
 ```
 
 ### 4. 配置 Supabase 数据库
@@ -98,15 +97,15 @@ git push origin main
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-AGNES_API_KEY=sk-JQe3pJYGIVgbO2pAgX5o4KdeEVWF8EiIq8fYxllirEsLMFOy
+AGNES_API_KEY=your-agnes-api-key
 AGNES_BASE_URL=https://api.agnes-ai.com
 NEXT_PUBLIC_APP_URL=https://your-domain.pages.dev
 NEXT_PUBLIC_APP_NAME=Prompt Studio
-PAYMENT_MERCHANT_ID=150
-PAYMENT_MERCHANT_KEY=QqAlgOwucP6uQIxIhpVnFK288UXwhIxB
-PAYMENT_SOFTWARE_KEY=DQExOMh4pPtAiTtxKAWI9NNpwfIwfZZn
-PAYMENT_API_URL=https://pay.mx88.top/mapi.php
-PAYMENT_SUBMIT_URL=https://pay.mx88.top/submit.php
+PAYMENT_MERCHANT_ID=your-merchant-id
+PAYMENT_MERCHANT_KEY=your-merchant-key
+PAYMENT_SOFTWARE_KEY=your-software-key
+PAYMENT_API_URL=https://your-payment-gateway/mapi.php
+PAYMENT_SUBMIT_URL=https://your-payment-gateway/submit.php
 ```
 
 ### 4. 部署
@@ -225,6 +224,7 @@ prompt-studio/
 2. **生产环境请使用强密码**
 3. **定期备份数据库**
 4. **监控API使用量**
+5. **敏感密钥（API Key、支付密钥等）不得明文写入仓库**
 
 ## 许可证
 
@@ -233,6 +233,3 @@ MIT
 ## 联系方式
 
 如有问题，请提交 Issue。
-=======
-# Prompt-Studio
->>>>>>> 79328e740e8cf59dca25e6fc81c07c65e4c57615
