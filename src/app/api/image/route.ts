@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 
-export const runtime = 'edge'
-
 export async function POST(request: NextRequest) {
   try {
     const { prompt, negative_prompt, size, style, count = 1 } = await request.json()
