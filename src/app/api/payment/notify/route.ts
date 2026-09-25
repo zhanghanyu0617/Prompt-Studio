@@ -4,7 +4,7 @@ import crypto from 'crypto'
 
 // 验证易支付签名
 function verifySign(params: Record<string, string>, key: string): boolean {
-  const sign = params.get('sign')
+  const sign = params['sign']
   if (!sign) return false
 
   // 过滤掉 sign 和 sign_type
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
     // 验证签名
     const merchantKey = process.env.PAYMENT_MERCHANT_KEY!
-    if (!verifySign(params, merchantKey)) {
+    if (!verifySign(Object.fromEntries(params.entries()), merchantKey)) {
       console.error('Invalid sign')
       return NextResponse.json('fail')
     }

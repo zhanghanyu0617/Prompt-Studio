@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
       const data = await response.json()
 
       // 保存图片到 Supabase Storage
-      const imageUrls = []
+      const imageUrls: string[] = []
       for (let i = 0; i < data.data.length; i++) {
         const imageData = data.data[i]
         const imageUrl = imageData.url || imageData.b64_json

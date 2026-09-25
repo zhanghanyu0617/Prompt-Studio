@@ -70,8 +70,8 @@ export async function POST(request: Request) {
       case 'update':
         // 更新邀请码
         const { error: updateError } = await supabaseAdmin
-          // @ts-ignore
           .from('invite_codes')
+          // @ts-ignore - Supabase 类型推断问题
           .update({
             max_uses: (payload as any).max_uses,
             reward_quota: (payload as any).reward_quota,

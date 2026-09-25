@@ -15,6 +15,7 @@ interface StatefulButtonProps {
   className?: string
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
+  icon?: React.ReactNode
   children?: React.ReactNode
 }
 
@@ -29,6 +30,7 @@ export function StatefulButton({
   className = '',
   disabled = false,
   type = 'button',
+  icon,
   children,
 }: StatefulButtonProps) {
   const [state, setState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -101,7 +103,12 @@ export function StatefulButton({
           </span>
         )
       default:
-        return text
+        return (
+          <span className="flex items-center gap-2">
+            {icon}
+            {text}
+          </span>
+        )
     }
   }
 
