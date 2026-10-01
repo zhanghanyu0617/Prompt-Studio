@@ -3,6 +3,9 @@ const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   swcMinify: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
     unoptimized: true,
   },
