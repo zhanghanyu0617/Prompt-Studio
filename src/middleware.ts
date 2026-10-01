@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
   const response = NextResponse.next()
-  const supabase = createMiddlewareClient({ cookies: () => request.cookies })
+  const supabase = createMiddlewareClient({ req: request, res: response })
 
   const { data: { session } } = await supabase.auth.getSession()
 
