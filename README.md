@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Prompt Studio - AI创作工作台
 
 功能强大的AI创作工作台，支持AI对话、图片生成、视频生成等功能。
@@ -39,7 +38,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 
 # AGNES API 配置
-AGNES_API_KEY=sk-JQe3pJYGIVgbO2pAgX5o4KdeEVWF8EiIq8fYxllirEsLMFOy
+AGNES_API_KEY=your-agnes-api-key
 AGNES_BASE_URL=https://api.agnes-ai.com
 
 # 应用配置
@@ -47,9 +46,9 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_APP_NAME=Prompt Studio
 
 # 支付配置（易支付）
-PAYMENT_MERCHANT_ID=150
-PAYMENT_MERCHANT_KEY=QqAlgOwucP6uQIxIhpVnFK288UXwhIxB
-PAYMENT_SOFTWARE_KEY=DQExOMh4pPtAiTtxKAWI9NNpwfIwfZZn
+PAYMENT_MERCHANT_ID=your-merchant-id
+PAYMENT_MERCHANT_KEY=your-payment-merchant-key
+PAYMENT_SOFTWARE_KEY=your-payment-software-key
 PAYMENT_API_URL=https://pay.mx88.top/mapi.php
 PAYMENT_SUBMIT_URL=https://pay.mx88.top/submit.php
 ```
@@ -98,13 +97,13 @@ git push origin main
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-AGNES_API_KEY=sk-JQe3pJYGIVgbO2pAgX5o4KdeEVWF8EiIq8fYxllirEsLMFOy
+AGNES_API_KEY=your-agnes-api-key
 AGNES_BASE_URL=https://api.agnes-ai.com
 NEXT_PUBLIC_APP_URL=https://your-domain.pages.dev
 NEXT_PUBLIC_APP_NAME=Prompt Studio
-PAYMENT_MERCHANT_ID=150
-PAYMENT_MERCHANT_KEY=QqAlgOwucP6uQIxIhpVnFK288UXwhIxB
-PAYMENT_SOFTWARE_KEY=DQExOMh4pPtAiTtxKAWI9NNpwfIwfZZn
+PAYMENT_MERCHANT_ID=your-merchant-id
+PAYMENT_MERCHANT_KEY=your-payment-merchant-key
+PAYMENT_SOFTWARE_KEY=your-payment-software-key
 PAYMENT_API_URL=https://pay.mx88.top/mapi.php
 PAYMENT_SUBMIT_URL=https://pay.mx88.top/submit.php
 ```
@@ -141,8 +140,8 @@ prompt-studio/
 │   │   └── utils.ts           # 工具函数
 │   ├── store/                 # 状态管理
 │   │   └── auth.ts            # 认证状态
-│   └── types/                 # TypeScript类型
-│       └── supabase.ts        # Supabase类型
+│   ├── types/                 # TypeScript类型
+│   │   └── supabase.ts        # Supabase类型
 ├── supabase/
 │   └── schema.sql             # 数据库Schema
 ├── public/                    # 静态资源
@@ -222,9 +221,10 @@ prompt-studio/
 ## 注意事项
 
 1. **不要将 `.env.local` 提交到Git**
-2. **生产环境请使用强密码**
-3. **定期备份数据库**
-4. **监控API使用量**
+2. **切勿在 README 或代码中硬编码真实 API Key / 支付密钥**（本文件中的密钥均已替换为占位符）
+3. **生产环境请使用强密码**
+4. **定期备份数据库**
+5. **监控API使用量**
 
 ## 许可证
 
@@ -233,6 +233,3 @@ MIT
 ## 联系方式
 
 如有问题，请提交 Issue。
-=======
-# Prompt-Studio
->>>>>>> 79328e740e8cf59dca25e6fc81c07c65e4c57615
